@@ -9,7 +9,7 @@
     <packager>CyberSalt</packager>
     <packagerurl>https://cybersalt.org</packagerurl>
     <copyright>Copyright (C) 2024 CyberSalt. All rights reserved.</copyright>
-    <license>GNU General Public License version 2 or later</license>
+    <license>GNU General Public License version 3 or later</license>
     <description>PKG_WHMCSBRIDGE_DESCRIPTION</description>
 
     <scriptfile>script.php</scriptfile>
