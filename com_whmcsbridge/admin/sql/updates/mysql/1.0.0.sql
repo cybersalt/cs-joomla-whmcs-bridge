@@ -1,0 +1,2 @@
+-- Version 1.0.0 - Initial release
+-- Schema created in install.mysql.sql

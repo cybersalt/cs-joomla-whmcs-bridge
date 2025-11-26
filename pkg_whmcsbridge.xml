@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="package" method="upgrade">
+    <name>PKG_WHMCSBRIDGE</name>
+    <author>CyberSalt</author>
+    <creationDate>2024-11</creationDate>
+    <packagename>whmcsbridge</packagename>
+    <version>1.0.0</version>
+    <url>https://cybersalt.org</url>
+    <packager>CyberSalt</packager>
+    <packagerurl>https://cybersalt.org</packagerurl>
+    <copyright>Copyright (C) 2024 CyberSalt. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later</license>
+    <description>PKG_WHMCSBRIDGE_DESCRIPTION</description>
+
+    <scriptfile>script.php</scriptfile>
+
+    <files>
+        <file type="component" id="com_whmcsbridge">com_whmcsbridge.zip</file>
+        <file type="plugin" id="plg_authentication_whmcs" group="authentication">plg_authentication_whmcs.zip</file>
+    </files>
+
+    <languages folder="language">
+        <language tag="en-GB">en-GB/pkg_whmcsbridge.ini</language>
+        <language tag="en-GB">en-GB/pkg_whmcsbridge.sys.ini</language>
+    </languages>
+</extension>

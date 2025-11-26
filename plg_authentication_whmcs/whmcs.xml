@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="authentication" method="upgrade">
+    <name>PLG_AUTHENTICATION_WHMCS</name>
+    <author>CyberSalt</author>
+    <creationDate>2024-11</creationDate>
+    <copyright>Copyright (C) 2024 CyberSalt. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later</license>
+    <authorEmail>support@cybersalt.org</authorEmail>
+    <authorUrl>https://cybersalt.org</authorUrl>
+    <version>1.0.0</version>
+    <description>PLG_AUTHENTICATION_WHMCS_XML_DESCRIPTION</description>
+
+    <namespace path="src">CyberSalt\Plugin\Authentication\Whmcs</namespace>
+
+    <files>
+        <folder plugin="whmcs">services</folder>
+        <folder>src</folder>
+        <folder>language</folder>
+    </files>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    name="auto_create_user"
+                    type="radio"
+                    label="PLG_AUTHENTICATION_WHMCS_AUTO_CREATE"
+                    description="PLG_AUTHENTICATION_WHMCS_AUTO_CREATE_DESC"
+                    default="1"
+                    class="btn-group btn-group-yesno"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    name="sync_on_login"
+                    type="radio"
+                    label="PLG_AUTHENTICATION_WHMCS_SYNC_ON_LOGIN"
+                    description="PLG_AUTHENTICATION_WHMCS_SYNC_ON_LOGIN_DESC"
+                    default="1"
+                    class="btn-group btn-group-yesno"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

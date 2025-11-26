@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" method="upgrade">
+    <name>COM_WHMCSBRIDGE</name>
+    <author>CyberSalt</author>
+    <creationDate>2024-11</creationDate>
+    <copyright>Copyright (C) 2024 CyberSalt. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later</license>
+    <authorEmail>support@cybersalt.org</authorEmail>
+    <authorUrl>https://cybersalt.org</authorUrl>
+    <version>1.0.0</version>
+    <description>COM_WHMCSBRIDGE_XML_DESCRIPTION</description>
+
+    <namespace path="src">CyberSalt\Component\Whmcsbridge</namespace>
+
+    <scriptfile>script.php</scriptfile>
+
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.sql</file>
+        </sql>
+    </install>
+
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.sql</file>
+        </sql>
+    </uninstall>
+
+    <update>
+        <schemas>
+            <schemapath type="mysql">sql/updates/mysql</schemapath>
+        </schemas>
+    </update>
+
+    <media destination="com_whmcsbridge" folder="media">
+        <folder>css</folder>
+        <folder>js</folder>
+    </media>
+
+    <administration>
+        <menu>COM_WHMCSBRIDGE</menu>
+        <submenu>
+            <menu link="option=com_whmcsbridge">COM_WHMCSBRIDGE_DASHBOARD</menu>
+            <menu link="option=com_whmcsbridge&amp;view=users">COM_WHMCSBRIDGE_USERS</menu>
+            <menu link="option=com_whmcsbridge&amp;view=products">COM_WHMCSBRIDGE_PRODUCTS</menu>
+            <menu link="option=com_whmcsbridge&amp;view=groupmaps">COM_WHMCSBRIDGE_GROUPMAPS</menu>
+            <menu link="option=com_config&amp;view=component&amp;component=com_whmcsbridge">COM_WHMCSBRIDGE_SETTINGS</menu>
+        </submenu>
+        <files folder="admin">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <folder>forms</folder>
+            <folder>services</folder>
+            <folder>src</folder>
+            <folder>tmpl</folder>
+            <folder>sql</folder>
+            <folder>language</folder>
+        </files>
+    </administration>
+
+    <config>
+        <fields name="params">
+            <fieldset name="whmcs_api" label="COM_WHMCSBRIDGE_FIELDSET_API">
+                <field
+                    name="api_url"
+                    type="url"
+                    label="COM_WHMCSBRIDGE_FIELD_API_URL"
+                    description="COM_WHMCSBRIDGE_FIELD_API_URL_DESC"
+                    required="true"
+                    filter="url"
+                />
+                <field
+                    name="api_identifier"
+                    type="text"
+                    label="COM_WHMCSBRIDGE_FIELD_API_IDENTIFIER"
+                    description="COM_WHMCSBRIDGE_FIELD_API_IDENTIFIER_DESC"
+                    required="true"
+                    filter="string"
+                />
+                <field
+                    name="api_secret"
+                    type="password"
+                    label="COM_WHMCSBRIDGE_FIELD_API_SECRET"
+                    description="COM_WHMCSBRIDGE_FIELD_API_SECRET_DESC"
+                    required="true"
+                    filter="raw"
+                />
+            </fieldset>
+            <fieldset name="sync" label="COM_WHMCSBRIDGE_FIELDSET_SYNC">
+                <field
+                    name="default_usergroup"
+                    type="usergrouplist"
+                    label="COM_WHMCSBRIDGE_FIELD_DEFAULT_USERGROUP"
+                    description="COM_WHMCSBRIDGE_FIELD_DEFAULT_USERGROUP_DESC"
+                    layout="joomla.form.field.list-fancy-select"
+                />
+                <field
+                    name="auto_create_users"
+                    type="radio"
+                    label="COM_WHMCSBRIDGE_FIELD_AUTO_CREATE"
+                    description="COM_WHMCSBRIDGE_FIELD_AUTO_CREATE_DESC"
+                    default="1"
+                    class="btn-group btn-group-yesno"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    name="sync_on_login"
+                    type="radio"
+                    label="COM_WHMCSBRIDGE_FIELD_SYNC_ON_LOGIN"
+                    description="COM_WHMCSBRIDGE_FIELD_SYNC_ON_LOGIN_DESC"
+                    default="1"
+                    class="btn-group btn-group-yesno"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

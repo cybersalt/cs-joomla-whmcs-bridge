@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="details" label="COM_WHMCSBRIDGE_FIELDSET_DETAILS">
+        <field
+            name="id"
+            type="hidden"
+        />
+
+        <field
+            name="map_type"
+            type="list"
+            label="COM_WHMCSBRIDGE_FIELD_MAP_TYPE"
+            description="COM_WHMCSBRIDGE_FIELD_MAP_TYPE_DESC"
+            required="true"
+            default="product"
+        >
+            <option value="product">COM_WHMCSBRIDGE_MAP_TYPE_PRODUCT</option>
+            <option value="product_group">COM_WHMCSBRIDGE_MAP_TYPE_PRODUCT_GROUP</option>
+            <option value="status">COM_WHMCSBRIDGE_MAP_TYPE_STATUS</option>
+        </field>
+
+        <field
+            name="whmcs_identifier"
+            type="text"
+            label="COM_WHMCSBRIDGE_FIELD_WHMCS_IDENTIFIER"
+            description="COM_WHMCSBRIDGE_FIELD_WHMCS_IDENTIFIER_DESC"
+            required="true"
+            size="50"
+        />
+
+        <field
+            name="whmcs_name"
+            type="text"
+            label="COM_WHMCSBRIDGE_FIELD_WHMCS_NAME"
+            description="COM_WHMCSBRIDGE_FIELD_WHMCS_NAME_DESC"
+            size="50"
+        />
+
+        <field
+            name="joomla_group_id"
+            type="usergrouplist"
+            label="COM_WHMCSBRIDGE_FIELD_JOOMLA_GROUP"
+            description="COM_WHMCSBRIDGE_FIELD_JOOMLA_GROUP_DESC"
+            required="true"
+            layout="joomla.form.field.list-fancy-select"
+        />
+
+        <field
+            name="priority"
+            type="number"
+            label="COM_WHMCSBRIDGE_FIELD_PRIORITY"
+            description="COM_WHMCSBRIDGE_FIELD_PRIORITY_DESC"
+            default="0"
+            min="0"
+            max="100"
+        />
+
+        <field
+            name="published"
+            type="list"
+            label="JSTATUS"
+            description="JFIELD_PUBLISHED_DESC"
+            default="1"
+            class="form-select"
+        >
+            <option value="1">JPUBLISHED</option>
+            <option value="0">JUNPUBLISHED</option>
+        </field>
+    </fieldset>
+</form>

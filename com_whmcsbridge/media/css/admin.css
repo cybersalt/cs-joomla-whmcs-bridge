@@ -1,0 +1,26 @@
+/**
+ * @package     CyberSalt.Whmcsbridge
+ * @subpackage  Administrator
+ *
+ * @copyright   Copyright (C) 2024 CyberSalt. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+/* WHMCS Bridge Admin Styles */
+
+.com_whmcsbridge .card {
+    margin-bottom: 1rem;
+}
+
+.com_whmcsbridge .display-4 {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.com_whmcsbridge .card-body.text-center h2 {
+    color: var(--template-bg-dark-80);
+}
+
+[data-bs-theme="dark"] .com_whmcsbridge .card-body.text-center h2 {
+    color: var(--template-text-light);
+}
